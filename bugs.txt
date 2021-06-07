@@ -1,0 +1,35 @@
+1. Return floored result of multiplication. For assertion purposes use not-floored result or in data provider use floored expected result
+    public double mult(double a, double b) {
+        return Math.floor(a * b);
+    }
+
+2. Wrong formula for cotangent calculation. The right one is: ctg(a) = 1 / tanh(a)
+    public double ctg(double a) {
+        return Math.tanh(a);
+    }
+
+3. Constructor can be private because method sleep is static. Also catch section is empty
+    public class Timeout {
+           public Timeout() {
+           }
+
+           public static void sleep(int sec) {
+               try {
+                   Thread.sleep((long)(sec * 1000));
+               } catch (InterruptedException var2) {
+               }
+
+           }
+       }
+
+4. Wrong Math method in cos method body. Should use Math.cos instead of Math.sin
+    public double cos(double a) {
+        return Math.sin(a);
+    }
+
+5. Because of Calculator.cos calculation looks like this: sin(a)/sin(a)
+    public double tg(double a) {
+        return this.sin(a) / this.cos(a);
+    }
+
+6. Math.sin and Math.cos is using radians by default. Probably should convert variable to degrees, for assertions

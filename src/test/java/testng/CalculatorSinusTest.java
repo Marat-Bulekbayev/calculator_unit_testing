@@ -6,8 +6,10 @@ import org.testng.annotations.Test;
 
 public class CalculatorSinusTest extends CalculatorBaseTest {
 
-    @Test(groups = {"trigonometric operations test"}, dataProvider = "data provider", dataProviderClass = DataProviderForCalculator.class)
-    public void testSinus(double number, double expectedResult) {
-        Assert.assertEquals(calculator.sin(number), expectedResult, 0.01);
+    @Test(groups = {"trigonometric operations test"}, testName = "Testing calculator's sin method",
+            dataProvider = "data provider", dataProviderClass = DataProviderForCalculator.class)
+    public void testSinus(double number, double expectedResult, double delta, String errorMessage) {
+        double actualResult = calculator.sin(number);
+        Assert.assertEquals(actualResult, expectedResult, delta, errorMessage);
     }
 }

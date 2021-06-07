@@ -10,6 +10,8 @@ public class CalculatorCotangentTest extends CalculatorBaseTest {
     @Test
     @DisplayName("Testing calculator's cotangent method")
     public void testCotangent() {
-        assertEquals(1.61, calculator.ctg(45), 0.01);
+        double expectedResult = 1.61;
+        double actualResult = calculator.ctg(45);
+        assertEquals(expectedResult, actualResult, 0.01, "Actual result: " + actualResult + " isn't equals to expected: " + expectedResult);
     }
 }

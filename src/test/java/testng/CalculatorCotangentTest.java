@@ -6,8 +6,10 @@ import org.testng.annotations.Test;
 
 public class CalculatorCotangentTest extends CalculatorBaseTest {
 
-    @Test(groups = {"trigonometric operations test"}, dataProvider = "data provider", dataProviderClass = DataProviderForCalculator.class)
-    public void testCotangent(double number, double expectedResult) {
-        Assert.assertEquals(calculator.ctg(number), expectedResult, 0.01);
+    @Test(groups = {"trigonometric operations test"}, testName = "Testing calculator's ctg method",
+            dataProvider = "data provider", dataProviderClass = DataProviderForCalculator.class)
+    public void testCotangent(double number, double expectedResult, double delta, String errorMessage) {
+        double actualResult = calculator.ctg(number);
+        Assert.assertEquals(actualResult, expectedResult, delta, errorMessage);
     }
 }
