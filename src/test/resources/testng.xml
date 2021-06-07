@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Homework Suite" parallel="classes" thread-count="4">
+    <groups>
+        <run>
+            <include name="setup"/>
+            <include name="arithmetic operations test"/>
+            <include name="trigonometric operations test"/>
+        </run>
+    </groups>
+    <test name="Test Calculator's arithmetic operations">
+        <classes>
+            <class name="testng.CalculatorAddTest"/>
+            <class name="testng.CalculatorSubtractTest"/>
+            <class name="testng.CalculatorMultiplyTest"/>
+            <class name="testng.CalculatorDivideTest"/>
+            <class name="testng.CalculatorIsPositiveTest"/>
+            <class name="testng.CalculatorIsNegativeTest"/>
+        </classes>
+    </test>
+
+    <test name="Test Calculator's trigonometric operations">
+        <classes>
+            <class name="testng.CalculatorSinusTest"/>
+            <class name="testng.CalculatorCosineTest"/>
+            <class name="testng.CalculatorTangentTest"/>
+            <class name="testng.CalculatorCotangentTest"/>
+        </classes>
+    </test>
+</suite>
