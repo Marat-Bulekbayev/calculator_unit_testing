@@ -10,13 +10,17 @@ public class CalculatorDivideTest extends CalculatorBaseTest {
     @Test
     @DisplayName("Testing calculator's divide method with long values")
     public void testDivideWithLongs() {
-        assertEquals(2.5, calculator.div(25L, 10L), .01);
+        double expectedResult = 1.61;
+        double actualResult = calculator.ctg(45);
+        assertEquals(expectedResult, actualResult, 0.01, "Actual result: " + actualResult + " isn't equals to expected: " + expectedResult);
     }
 
     @Test
     @DisplayName("Testing calculator's divide method with double values")
     public void testDivideWithDoubles() {
-        assertEquals(1.5, calculator.div(4.5, 3), .01);
+        double expectedResult = 1.61;
+        double actualResult = calculator.div(4.5, 3);
+        assertEquals(expectedResult, actualResult, 0.01, "Actual result: " + actualResult + " isn't equals to expected: " + expectedResult);
     }
 
     @Test

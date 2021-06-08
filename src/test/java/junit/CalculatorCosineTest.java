@@ -10,6 +10,8 @@ public class CalculatorCosineTest extends CalculatorBaseTest {
     @Test
     @DisplayName("Testing calculator's cosine method")
     public void testCosine() {
-        assertEquals(0.52, calculator.cos(45), 0.01);
+        double expectedResult = 0.52;
+        double actualResult = calculator.cos(45);
+        assertEquals(expectedResult, actualResult, 0.01, "Actual result: " + actualResult + " isn't equals to expected: " + expectedResult);
     }
 }
